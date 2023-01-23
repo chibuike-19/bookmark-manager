@@ -24,6 +24,7 @@ const SignUp = () => {
         console.log(error);
       });
   };
+
   return (
     <div>
       <section>
@@ -70,6 +71,7 @@ const SignUp = () => {
               Already have an account? <NavLink to="/login">Sign in</NavLink>
             </p>
           </div>
+          <div></div>
         </div>
       </section>
     </div>
