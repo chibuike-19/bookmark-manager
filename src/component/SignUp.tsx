@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, NavLink } from "react-router-dom";
 import { auth } from "../firebase";
+import img1 from '../assets/3.png'
 import { useState } from "react";
 import "../styles/signIn.css";
 
@@ -38,7 +39,7 @@ const SignUp = () => {
                   Email*
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   className="email"
                   value={email}
                   onClick={() => setActive(true)}
@@ -71,7 +72,9 @@ const SignUp = () => {
               Already have an account? <NavLink to="/login">Sign in</NavLink>
             </p>
           </div>
-          <div></div>
+          <div className="carousel-img">
+            <img src={img1} alt="carosel image" />
+          </div>
         </div>
       </section>
     </div>

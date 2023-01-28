@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+.carousel-img{
+  display: none;
+}
 h2 {
   margin-bottom: 40px;
 }
@@ -12,16 +15,21 @@ h2 {
   position: relative;
   margin-bottom: 40px;
 }
-.input-container:focus-within label {
+.input-container:focus-within  input {
+  outline: none;
+}
+.input-container:focus-within label{
+  top: -18px;
+}
+
+input:focus > label,
+input:valid > label{
   top: -18px;
   z-index: 10000;
   color: blue;
-  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+  left: 0px;
 }
-.input-container:focus-within input {
-  outline: none;
-}
-.email {
+input {
   border: 0px solid;
   width: 300px;
   padding: 10px 0px;
@@ -37,31 +45,11 @@ h2 {
   color: white;
   cursor: pointer;
 }
-.email::placeholder {
-  color: gray;
+label {
   position: absolute;
-  top: 0px;
-  left: 10px;
-  transform: translateY(-50%);
-}
-.email-label {
-  position: absolute;
-  left: 14px;
+  left: 0px;
   top: 8px;
   color: gray;
-}
-.email-active {
-  border: 0px solid;
-  border-bottom: 1px solid gray;
-  margin-bottom: 20px;
-  padding: 10px;
-}
-
-.email-active::placeholder {
-  position: absolute;
-  top: 0px;
-  left: 10px;
-  transform: none;
 }
 
 }
