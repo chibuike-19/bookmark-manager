@@ -30,17 +30,19 @@ const SignUp = () => {
     <div>
       <section>
         <div className="form-container">
-          <div>
-            <h1> Welcome to BOOKER-IT </h1>
+          <div className="sign_up_form">
+            <h1> Welcome to BOOKER-IT Manager </h1>
             <h2>Sign Up</h2>
             <form onSubmit={(e) => onSubmit(e)}>
-              <div className="input-container">
-                <label htmlFor="" className="email-label">
+              <div className="box-container">
+                <div className="input-container">
+                <label htmlFor="email" className="email-label">
                   Email*
                 </label>
                 <input
                   type="text"
-                  className="email"
+                  name="email"
+                  // className="email"
                   value={email}
                   onClick={() => setActive(true)}
                   onChange={(e) => {
@@ -49,12 +51,15 @@ const SignUp = () => {
                   required
                 />
               </div>
+                </div>
 
-              <div className="input-container">
-                <label htmlFor="" className="email-label">Password*</label>
+              <div className="box-container">
+                <div className="input-container">
+                <label htmlFor="password" className="email-label">Password*</label>
                 <input
-                  className="email"
+                  // className="email"
                   type="password"
+                  name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -66,6 +71,7 @@ const SignUp = () => {
                   Sign up
                 </button>
               </div>
+                </div>
             </form>
 
             <p>

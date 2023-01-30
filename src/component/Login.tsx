@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import img1 from '../assets/3.png'
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -29,7 +30,8 @@ const Login = () => {
               <h1> Welcome to BOOKER-IT </h1>
               <h2>LogIn</h2>
               <form onSubmit={(e) => onLogin(e)}>
-                <div className="input-container">
+                <div className="box-container">
+                  <div className="input-container">
                   <label htmlFor="" className="email-label">
                     Email*
                   </label>
@@ -43,8 +45,10 @@ const Login = () => {
                     required
                   />
                 </div>
+                  </div>
 
-                <div className="input-container">
+                <div className="box-container">
+                  <div className="input-container">
                   <label htmlFor="" className="email-label">
                     Password*
                   </label>
@@ -56,6 +60,7 @@ const Login = () => {
                     required
                   />
                 </div>
+                  </div>
 
                 <div className="submit-btn">
                   <button type="submit" className="btn" onClick={onLogin}>
@@ -67,6 +72,9 @@ const Login = () => {
               <p>
                 Don't have an account yet? <NavLink to="/sign-up">Sign Up</NavLink>
               </p>
+            </div>
+            <div className="carousel-img">
+            <img src={img1} alt="carosel image" />
             </div>
           </div>
         </section>
