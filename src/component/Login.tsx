@@ -3,6 +3,8 @@ import { useNavigate, NavLink } from "react-router-dom";
 import img1 from '../assets/3.png'
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { signUpData } from "./signUpData";
+import Carousel from "./carousel";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -23,10 +25,9 @@ const Login = () => {
   };
   return (
     <div>
-      <main>
         <section>
           <div className="form-container">
-            <div>
+            <div className="sign_up_form">
               <h1> Welcome to BOOKER-IT </h1>
               <h2>LogIn</h2>
               <form onSubmit={(e) => onLogin(e)}>
@@ -74,11 +75,10 @@ const Login = () => {
               </p>
             </div>
             <div className="carousel-img">
-            <img src={img1} alt="carosel image" />
+              <Carousel data={signUpData}/>
             </div>
           </div>
         </section>
-      </main>
     </div>
   );
 };

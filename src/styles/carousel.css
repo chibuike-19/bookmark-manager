@@ -1,0 +1,17 @@
+.carousel_btn {
+    display: flex;
+    position: absolute;
+    margin: 0px 30px;
+    bottom: 1rem;
+    cursor: pointer;
+}
+.carousel_text {
+    position: absolute;
+    bottom: 7rem;
+    left: 4rem;
+    color: rgba(230, 120, 202, 0.938);
+    font-size: 40px;
+}
+.image_container {
+    position: relative;
+}
