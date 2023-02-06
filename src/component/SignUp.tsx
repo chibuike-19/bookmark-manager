@@ -37,42 +37,54 @@ const SignUp = () => {
             <form onSubmit={(e) => onSubmit(e)}>
               <div className="box-container">
                 <div className="input-container">
-                <label htmlFor="email" className="email-label">
-                  Email*
-                </label>
-                <input
-                  type="text"
-                  name="email"
-                  // className="email"
-                  value={email}
-                  onClick={() => setActive(true)}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                  required
-                />
-              </div>
+                  <input
+                    type="text"
+                    // className="email"
+                    required
+                  />
+                  <label htmlFor="email">Enter your name*</label>
                 </div>
+              </div>
+              <div className="box-container">
+                <div className="input-container">
+                  <input
+                    type="text"
+                    name="email"
+                    // className="email"
+                    value={email}
+                    onClick={() => setActive(true)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    required
+                  />
+                  <label htmlFor="email" className="email-label">
+                    Email*
+                  </label>
+                </div>
+              </div>
 
               <div className="box-container">
                 <div className="input-container">
-                <label htmlFor="password" className="email-label">Password*</label>
-                <input
-                  // className="email"
-                  type="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="submit-btn">
-                <button type="submit" className="btn" onClick={onSubmit}>
-                  Sign up
-                </button>
-              </div>
+                  <input
+                    // className="email"
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <label htmlFor="password" className="email-label">
+                    Password*
+                  </label>
                 </div>
+
+                <div className="submit-btn">
+                  <button type="submit" className="btn" onClick={onSubmit}>
+                    Sign up
+                  </button>
+                </div>
+              </div>
             </form>
 
             <p>

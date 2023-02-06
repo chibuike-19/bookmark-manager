@@ -29,6 +29,7 @@ const Carousel = ({ data }) => {
           <img
             src={item.img}
             alt={item.text}
+            className={currentIndex == index ? "active" : ""}
             style={{
               display: currentIndex == index ? "block" : "none",
               height: "100vh",

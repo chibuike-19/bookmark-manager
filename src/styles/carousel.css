@@ -5,11 +5,20 @@
     bottom: 1rem;
     cursor: pointer;
 }
+img {
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+    transform: translateX(-100%);
+}
+.active {
+    opacity: 1;
+    transform: translateX(0%);
+}
 .carousel_text {
     position: absolute;
     bottom: 7rem;
     left: 4rem;
-    color: rgba(230, 120, 202, 0.938);
+    color: rgba(254, 252, 255, 0.938);
     font-size: 40px;
 }
 .image_container {

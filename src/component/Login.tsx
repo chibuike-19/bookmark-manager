@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import img1 from '../assets/3.png'
+import img1 from "../assets/3.png";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { signUpData } from "./signUpData";
@@ -25,17 +25,14 @@ const Login = () => {
   };
   return (
     <div>
-        <section>
-          <div className="form-container">
-            <div className="sign_up_form">
-              <h1> Welcome to BOOKER-IT </h1>
-              <h2>LogIn</h2>
-              <form onSubmit={(e) => onLogin(e)}>
-                <div className="box-container">
-                  <div className="input-container">
-                  <label htmlFor="" className="email-label">
-                    Email*
-                  </label>
+      <section>
+        <div className="form-container">
+          <div className="sign_up_form">
+            <h1> Welcome to BOOKER-IT </h1>
+            <h2>LogIn</h2>
+            <form onSubmit={(e) => onLogin(e)}>
+              <div className="box-container">
+                <div className="input-container">
                   <input
                     type="email"
                     className="email"
@@ -45,14 +42,14 @@ const Login = () => {
                     }}
                     required
                   />
-                </div>
-                  </div>
-
-                <div className="box-container">
-                  <div className="input-container">
                   <label htmlFor="" className="email-label">
-                    Password*
+                    Email*
                   </label>
+                </div>
+              </div>
+
+              <div className="box-container">
+                <div className="input-container">
                   <input
                     className="email"
                     type="password"
@@ -60,25 +57,29 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+                  <label htmlFor="" className="email-label">
+                    Password*
+                  </label>
                 </div>
-                  </div>
+              </div>
 
-                <div className="submit-btn">
-                  <button type="submit" className="btn" onClick={onLogin}>
-                    Sign up
-                  </button>
-                </div>
-              </form>
+              <div className="submit-btn">
+                <button type="submit" className="btn" onClick={onLogin}>
+                  Sign up
+                </button>
+              </div>
+            </form>
 
-              <p>
-                Don't have an account yet? <NavLink to="/sign-up">Sign Up</NavLink>
-              </p>
-            </div>
-            <div className="carousel-img">
-              <Carousel data={signUpData}/>
-            </div>
+            <p>
+              Don't have an account yet?{" "}
+              <NavLink to="/sign-up">Sign Up</NavLink>
+            </p>
           </div>
-        </section>
+          <div className="carousel-img">
+            <Carousel data={signUpData} />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
