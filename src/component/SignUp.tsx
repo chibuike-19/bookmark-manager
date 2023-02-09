@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate, NavLink } from "react-router-dom";
 import { auth } from "../firebase";
 import { signUpData } from "./signUpData";
-import { useState, useRef } from "react";
+import { useState} from "react";
 import "../styles/signIn.css";
 import Carousel from "./carousel";
 
@@ -13,7 +13,7 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [active, setActive] = useState(false);
   const [password, setPassword] = useState("");
-  const nameRef = useRef();
+  // const nameRef = useRef();
 
   const onSubmit = async (e: any) => {
     e.preventDefault();

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/home.css";
 import { auth } from "../firebase";
-import RidesTable from "./rides-table";
+// import RidesTable from "./rides-table";
 
 type users = {
   displayName: string;

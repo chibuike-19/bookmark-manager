@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/carousel.css"
 import {AiFillRightCircle} from "react-icons/ai"
 import {AiFillLeftCircle} from "react-icons/ai"
@@ -8,18 +8,18 @@ const Carousel = ({ data }: any) => {
 
   useEffect(() => {
     const changeImage = setInterval(() => {
-      setCurrentIndex(currentIndex == data.length - 1 ? 0 : currentIndex + 1)
+      setCurrentIndex(currentIndex === data.length - 1 ? 0 : currentIndex + 1)
     }, 3000)
     return () => clearInterval(changeImage);
   }, [currentIndex, data.length])
 
 
   const handleNext = () => {
-    setCurrentIndex(currentIndex == data.length - 1 ? 0 : currentIndex + 1)
+    setCurrentIndex(currentIndex === data.length - 1 ? 0 : currentIndex + 1)
   }
 
   const handlePrev = () => {
-    setCurrentIndex(currentIndex == 0 ? data.length - 1 : currentIndex - 1)
+    setCurrentIndex(currentIndex === 0 ? data.length - 1 : currentIndex - 1)
   }
 
   return (
@@ -29,16 +29,16 @@ const Carousel = ({ data }: any) => {
           <img
             src={item.img}
             alt={item.text}
-            className={currentIndex == index ? "active" : ""}
+            className={currentIndex === index ? "active" : ""}
             style={{
-              display: currentIndex == index ? "block" : "none",
+              display: currentIndex === index ? "block" : "none",
               height: "100vh",
               width: "100%",
               objectFit: "cover",
             }}
           />
           <p className="carousel_text">
-            {currentIndex == index ? item.text : ""}
+            {currentIndex === index ? item.text : ""}
           </p>
         </div>
       ))}
