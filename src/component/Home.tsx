@@ -5,10 +5,10 @@ import "../styles/home.css";
 import { auth } from "../firebase";
 // import RidesTable from "./rides-table";
 
-type users = {
-  displayName: string;
-  email: string;
-};
+// type users = {
+//   displayName: string;
+//   email: string;
+// };
 const Home = () => {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState<any>({});

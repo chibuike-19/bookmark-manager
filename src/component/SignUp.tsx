@@ -11,7 +11,6 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [name, setName] = useState("");
-  const [active, setActive] = useState(false);
   const [password, setPassword] = useState("");
   // const nameRef = useRef();
 
@@ -75,7 +74,6 @@ const SignUp = () => {
                     name="email"
                     className="email"
                     value={email}
-                    onClick={() => setActive(true)}
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
