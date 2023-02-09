@@ -1,0 +1,41 @@
+.nav_top{
+    display: fixed;
+    background-color: rgb(66, 66, 235);
+    color: white;
+    padding: 20px 0px;
+    font-size: 18px;
+}
+.next_btn{
+    display: grid;
+    place-content: center;
+}
+.btn{
+  padding: 4px 30px;
+  font-size: 18px;
+  border-radius: 4px;
+  border: 1px solid rgb(66, 66, 235);
+  background-color: rgb(66, 66, 235);
+  color: white;
+  cursor: pointer;
+}
+/* .box_cordinates{
+    display: flex;
+    flex-direction: column;
+} */
+.text {
+    text-align: start;
+}
+input {
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+}
+input:focus{
+    outline: none;
+}
+.inactive_form{
+    display: none;
+}
+.active_form{
+    display: block;
+}

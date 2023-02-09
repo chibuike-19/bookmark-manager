@@ -3,7 +3,7 @@ import "../styles/carousel.css"
 import {AiFillRightCircle} from "react-icons/ai"
 import {AiFillLeftCircle} from "react-icons/ai"
 
-const Carousel = ({ data }) => {
+const Carousel = ({ data }: any) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Carousel = ({ data }) => {
 
   return (
     <div>
-      {data.map((item, index) => (
+      {data.map((item:any, index:any) => (
         <div key={index} className="image_container">
           <img
             src={item.img}
@@ -44,10 +44,10 @@ const Carousel = ({ data }) => {
       ))}
       <div className="carousel_btn">
         <p onClick={handlePrev}>
-          <AiFillLeftCircle size={50} color={"rgb(79, 79, 252)"} />
+          <AiFillLeftCircle size={50} color={"rgb(40, 40, 238)"} />
         </p>
         <p onClick={handleNext}>
-          <AiFillRightCircle size={50} color={"rgb(79, 79, 252)"} />
+          <AiFillRightCircle size={50} color={"rgb(40, 40, 238)"} />
         </p>
       </div>
     </div>

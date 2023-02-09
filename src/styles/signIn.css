@@ -14,12 +14,12 @@
   justify-content: center;
   flex-direction: column;  
 }
-input:focus + label{
+.email:focus + label{
   top: -18px ;
   color: blue;
   left: 0px;
 }
-input:valid + label, input:focus + label{
+.email:valid + label, input:focus + label{
   top: -18px;
   font-size: 14px;
   color: blue;
@@ -33,7 +33,7 @@ input:valid + label, input:focus + label{
   width: 100%;
   place-content: center;
 }
-input {
+.email {
   border: 0px solid;
   width: 400px;
   padding: 10px 0px;
@@ -55,25 +55,40 @@ input {
   margin: 0px 40px 40px 40px;
 }
 
-label {
+.email-label {
   position: absolute;
   left: 0px;
   top: 8px;
   color: gray;
 }
-input:focus {
+.email:focus {
   outline: none;
 }
-input:valid {
+.email:valid {
   border-color: rgb(99, 99, 255);
 }
-input:invalid {
+.email:invalid {
   border-color: rgb(247, 192, 192);
 }
 h2 {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
-
+.error_inactive{
+  display: none;
+}
+.error_active {
+  margin-bottom: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  
+}
+.error_message {
+  padding: 10px 30px;
+  color: white;
+  border-radius: 4px;
+  background-color: rgb(250, 44, 44);
+}
 @media screen and (max-width: 1000px){
   .form-container {
   display: flex;
@@ -94,17 +109,17 @@ place-content: center;
   position: relative;
   margin-bottom: 40px;
 }
-
+/* 
 input:valid + label,
 input:focus + label{
   top: -18px;
   color: blue;
   left: 0px;
-}
+} */
 .sign_up_form{
   flex-basis: 100%
 }
-input {
+.email {
   border: 0px solid;
   width: 300px;
   padding: 10px 0px;

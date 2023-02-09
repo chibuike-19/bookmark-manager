@@ -1,8 +1,8 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate, NavLink } from "react-router-dom";
 import { auth } from "../firebase";
 import { signUpData } from "./signUpData";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../styles/signIn.css";
 import Carousel from "./carousel";
 
@@ -10,19 +10,37 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [name, setName] = useState("");
   const [active, setActive] = useState(false);
   const [password, setPassword] = useState("");
+  const nameRef = useRef();
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
+        if (auth.currentUser) {
+          updateProfile(auth.currentUser, {
+            displayName: name,
+          });
+        }
         const user = userCredentials.user;
         console.log(user);
         navigate("/login");
       })
       .catch((error) => {
-        setError(error.message);
+        if (
+          error.message === "Firebase: Error (auth/network-request-failed)."
+        ) {
+          setError("failed to connect, check your internet.");
+        } else if (error.message === "Firebase: Error (auth/user-not-found).") {
+          setError("Oops email does not exist ");
+        } else if (error.message === "Firebase: Error (auth/wrong-password).") {
+          setError("incorrect password");
+        } else if (error.message === "Firebase: Error (auth/invalid-email).") {
+          setError("Invalid Email");
+        }
+        //  setError(error.message);
         console.log(error);
       });
   };
@@ -32,17 +50,22 @@ const SignUp = () => {
       <section>
         <div className="form-container">
           <div className="sign_up_form">
-            <h1> Welcome to BOOKER-IT Manager </h1>
+            <h1> Welcome to Book-IT </h1>
             <h2>Sign Up</h2>
             <form onSubmit={(e) => onSubmit(e)}>
+              <div className={error ? "error_active" : "error_inactive"}>
+                <p className="error_message">{error && error}</p>
+              </div>
               <div className="box-container">
                 <div className="input-container">
                   <input
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
                     type="text"
-                    // className="email"
+                    className="email"
                     required
                   />
-                  <label htmlFor="email">Enter your name*</label>
+                  <label htmlFor="email" className="email-label">Enter your name*</label>
                 </div>
               </div>
               <div className="box-container">
@@ -50,7 +73,7 @@ const SignUp = () => {
                   <input
                     type="text"
                     name="email"
-                    // className="email"
+                    className="email"
                     value={email}
                     onClick={() => setActive(true)}
                     onChange={(e) => {
@@ -67,7 +90,7 @@ const SignUp = () => {
               <div className="box-container">
                 <div className="input-container">
                   <input
-                    // className="email"
+                    className="email"
                     type="password"
                     name="password"
                     value={password}
